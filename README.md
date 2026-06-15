@@ -44,6 +44,20 @@ Then ask the agent:
 Use AGENTS.md and the Goal Loop skill. Classify this task, choose the smallest loop, implement, run harness checks, and produce a run log.
 ```
 
+## Installation Paths
+
+Choose the adapter that matches the runtime:
+
+| Runtime | Instructions | Use when |
+| --- | --- | --- |
+| Codex | `adapters/codex/INSTALL.md` | The project uses `AGENTS.md` or Codex-style repository instructions. |
+| Claude Code | `adapters/claude/INSTALL.md` | The project uses `CLAUDE.md` and Claude skill folders. |
+| Generic/OpenAI-compatible | `adapters/generic/INSTALL.md` | The agent can read files or ingest a system prompt, but has no native skill system. |
+| GitHub publishing | `adapters/github-1password/INSTALL.md` | A repo should be published without exposing GitHub tokens in chat, shell history, or docs. |
+
+The generic adapter is the starting point for other models and runtimes, including
+OpenAI-compatible agents, Hermes, internal orchestrators, and chat-only LLMs.
+
 ## Claude Code
 
 See `adapters/claude/INSTALL.md`.
