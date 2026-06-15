@@ -1,0 +1,30 @@
+version: 0.1.0
+auto_approval_allowed_when:
+  - risk_level_is_low_or_medium
+  - acceptance_criteria_pass
+  - tests_pass
+  - lint_pass
+  - typecheck_pass_if_applicable
+  - score_threshold_met_if_applicable
+  - probes_pass_if_applicable
+  - no_sensitive_surface_touched
+  - required_evidence_recorded
+auto_approval_forbidden_when:
+  - auth_changed
+  - billing_changed
+  - permissions_changed
+  - secrets_changed
+  - destructive_migration
+  - production_deploy
+  - high_or_critical_security_finding
+  - same_gate_failed_twice
+  - max_iterations_reached_without_success
+  - tests_or_scorers_were_weakened
+required_evidence:
+  - task_classification
+  - risk_classification
+  - acceptance_criteria
+  - checks_run
+  - gate_results
+  - score_or_probe_results_if_used
+  - remaining_risks

@@ -1,0 +1,45 @@
+version: 0.1.0
+risk_levels:
+  low:
+    description: Localized, reversible, non-sensitive change.
+    examples:
+      - copy update
+      - isolated UI tweak
+      - non-critical docs update
+      - small test-only change
+  medium:
+    description: User-visible or code-path change with limited blast radius.
+    examples:
+      - frontend behavior change
+      - new non-sensitive API behavior
+      - background job update
+      - integration with retry/fallback
+  high:
+    description: Sensitive or broad change that can affect users, data, money, or access.
+    examples:
+      - authentication
+      - authorization
+      - billing
+      - permissions
+      - database migration
+      - user data export
+      - production deploy
+  critical:
+    description: Irreversible, security-critical, or production-impacting change.
+    examples:
+      - destructive migration
+      - secret rotation
+      - payment capture logic
+      - privilege escalation surface
+      - incident response
+      - data deletion
+human_required_when:
+  - risk_level: high
+  - risk_level: critical
+  - touches_auth: true
+  - touches_billing: true
+  - touches_permissions: true
+  - touches_secrets: true
+  - destructive_migration: true
+  - production_deploy: true
+  - high_or_critical_security_finding: true

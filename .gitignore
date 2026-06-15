@@ -1,0 +1,7 @@
+.DS_Store
+.ai/runs/
+*.log
+*.tmp
+.env
+.env.*
+!.env.example
